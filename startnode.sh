@@ -4,7 +4,7 @@ lsof -i:80 | grep node | awk '{print $2}' | xargs kill
 echo after kill
 ps
 # node app.js > log.txt &
-npm start
+npm start &
 echo after restart
 ps
 ippath=`ifconfig en0 | grep inet | grep -v inet6 | cut -d " " -f2 `;
